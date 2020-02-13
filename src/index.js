@@ -3,6 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { createStore } from 'redux';
+
+function reducer () {
+    return 'State';
+}
+
+const store = createStore(reducer);
+
+console.log(store.getState());
+
+const action = {
+    type: 'changeState',
+    payload: {
+        newState: 'New state'
+    }
+};
+
+store.dispatch(action);
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
